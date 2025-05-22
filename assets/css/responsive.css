@@ -1,0 +1,483 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* ===== TABLET LANDSCAPE (1024px and below) ===== */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-3xl: 4rem;
+        --spacing-2xl: 3rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-5xl);
+    }
+    
+    .content-header h2 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .grid-2 {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* ===== TABLET PORTRAIT (768px and below) ===== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-3xl: 3rem;
+        --spacing-2xl: 2rem;
+        --spacing-xl: 2rem;
+    }
+    
+    /* Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        display: flex;
+    }
+    
+    .mobile-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--spacing-2xl) var(--spacing-md);
+        min-height: calc(100vh - var(--nav-height));
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-4xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-actions .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Content */
+    .content-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .content-header h2 {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .content-header p {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Philosophy Section */
+    .philosophy-quote blockquote {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-lg);
+    }
+    
+    .philosophy-quote blockquote::before {
+        font-size: var(--font-size-3xl);
+        top: var(--spacing-sm);
+        left: var(--spacing-md);
+    }
+    
+    /* Make philosophy grid single column on mobile */
+    .philosophy-pillars .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Cards */
+    .card {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .card h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Grid layouts */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Projects */
+    .project-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .project-tags {
+        gap: var(--spacing-xs);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .testimonial-card::before {
+        font-size: var(--font-size-3xl);
+        top: var(--spacing-sm);
+        left: var(--spacing-md);
+    }
+    
+    .testimonial-text {
+        font-size: var(--font-size-base);
+        padding-top: var(--spacing-sm);
+    }
+    
+    /* Blog */
+    .blog-post {
+        padding: var(--spacing-lg);
+    }
+    
+    .blog-post h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Contact */
+    .contact-form-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .contact-methods {
+        text-align: left;
+    }
+}
+
+/* ===== MOBILE LANDSCAPE (640px and below) ===== */
+@media (max-width: 640px) {
+    :root {
+        --spacing-2xl: 1.5rem;
+        --spacing-xl: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .content-header h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .philosophy-quote blockquote {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    
+    .card {
+        padding: var(--spacing-md);
+    }
+    
+    .pillar-icon {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* ===== MOBILE PORTRAIT (480px and below) ===== */
+@media (max-width: 480px) {
+    .hero-actions .cta-button {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .project-tags {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-tag {
+        align-self: flex-start;
+    }
+    
+    .contact-methods {
+        gap: var(--spacing-xs);
+    }
+    
+    .contact-method {
+        word-break: break-word;
+    }
+}
+
+/* ===== SMALL MOBILE (360px and below) ===== */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-xs);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .card {
+        padding: var(--spacing-sm);
+    }
+    
+    .philosophy-quote blockquote {
+        padding: var(--spacing-sm);
+    }
+    
+    .testimonial-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .contact-form-container {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION (for mobile) ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .section {
+        min-height: auto;
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (min-resolution: 2dppx) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .navbar,
+    .mobile-menu,
+    .footer,
+    .hero-actions,
+    .contact-form-container {
+        display: none;
+    }
+    
+    .main-content {
+        margin-top: 0;
+    }
+    
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+        padding: var(--spacing-md) 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+        page-break-inside: avoid;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .hero {
+        background: none;
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero-title {
+        color: var(--text-primary) !important;
+        background: none !important;
+        -webkit-text-fill-color: var(--text-primary) !important;
+    }
+}
+
+/* ===== REDUCED MOTION PREFERENCES ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-light: #9ca3af;
+        --bg-primary: #1f2937;
+        --bg-secondary: #374151;
+        --bg-tertiary: #4b5563;
+        --border-color: #374151;
+        --border-light: #4b5563;
+    }
+    
+    .navbar {
+        background: rgba(31, 41, 55, 0.95);
+    }
+    
+    .hero {
+        background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    }
+    
+    .card {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background: var(--bg-secondary);
+        border-color: var(--border-color);
+        color: var(--text-primary);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary-color);
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+    /* Larger touch targets for mobile */
+    .nav-link,
+    .cta-button,
+    .mobile-menu {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        min-height: 44px;
+    }
+}
+
+/* ===== FOCUS STYLES FOR ACCESSIBILITY ===== */
+@media (max-width: 768px) {
+    .nav-link:focus,
+    .cta-button:focus,
+    .mobile-menu:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    /* Reduce animations on mobile for better performance */
+    .card:hover {
+        transform: none;
+    }
+    
+    .testimonial-card:hover,
+    .education-card:hover,
+    .blog-post:hover {
+        transform: none;
+    }
+}

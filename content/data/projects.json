@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "id": "security-vulnerability",
+      "title": "🔒 Critical Security Vulnerability Resolution",
+      "tags": ["Security", "Cross-functional Leadership", "Crisis Management"],
+      "description": "Led a cross-functional team of 12 engineers to identify and resolve a critical security vulnerability affecting our core platform. Coordinated with security, DevOps, and product teams to implement fixes while maintaining system stability.",
+      "impact": "Vulnerability patched within 48 hours with zero downtime. Established new security review processes that reduced similar issues by 85%. Mentored junior engineers throughout the process, turning a crisis into a learning opportunity.",
+      "leadership": "Maintained team morale during high-pressure situation, ensured clear communication across all stakeholders, and used the incident to strengthen team resilience and processes.",
+      "technologies": ["AWS Security Hub", "Docker", "Kubernetes", "CI/CD Pipelines"],
+      "timeline": "48 hours critical response, 2 weeks process improvement",
+      "teamSize": 12
+    },
+    {
+      "id": "platform-integration",
+      "title": "🚀 Platform Integration & Scaling",
+      "tags": ["System Architecture", "Team Scaling", "Mentorship"],
+      "description": "Architected and led the integration of multiple legacy systems into a unified platform serving 100K+ users. Grew the engineering team from 4 to 12 members while maintaining code quality and team culture.",
+      "impact": "40% improvement in system performance, 60% reduction in maintenance overhead, and successful onboarding of 8 new engineers across experience levels.",
+      "leadership": "Created structured onboarding program, established code review practices, and implemented mentorship pairings that accelerated team member growth.",
+      "technologies": ["Node.js", "React", "PostgreSQL", "Redis", "AWS", "Microservices"],
+      "timeline": "9 months end-to-end delivery",
+      "teamSize": "4 → 12 engineers"
+    },
+    {
+      "id": "education-platform",
+      "title": "📚 Engineering Education Platform",
+      "tags": ["EdTech", "Teaching", "Community Building"],
+      "description": "Developed and maintained learning management systems as a Teaching Assistant for edX bootcamps. Created curriculum materials and provided mentorship to 200+ aspiring developers.",
+      "impact": "95% student satisfaction rate, contributed to 80% completion rate (above industry average), and helped 150+ students transition into tech careers.",
+      "leadership": "Emphasized inclusive learning environments, created supportive community spaces, and developed scalable mentorship approaches.",
+      "technologies": ["LMS Platforms", "JavaScript", "Python", "Git", "VS Code"],
+      "timeline": "Ongoing role across multiple cohorts",
+      "teamSize": "5 teaching assistants, 200+ students"
+    },
+    {
+      "id": "aws-modernization",
+      "title": "☁️ AWS Infrastructure Modernization",
+      "tags": ["Cloud Architecture", "DevOps", "Cost Optimization"],
+      "description": "Led migration from on-premises infrastructure to AWS, implementing best practices for security, scalability, and cost management. Trained team on cloud-native development practices.",
+      "impact": "35% reduction in infrastructure costs, 99.9% uptime improvement, and enhanced disaster recovery capabilities. Team became fully proficient in AWS services within 6 months.",
+      "leadership": "Invested in team training and certification, created internal knowledge sharing sessions, and ensured smooth transition with minimal disruption.",
+      "technologies": ["AWS EC2", "AWS RDS", "AWS Lambda", "CloudFormation", "Docker", "Terraform"],
+      "timeline": "6 months migration + 3 months optimization",
+      "teamSize": "8 engineers"
+    },
+    {
+      "id": "performance-optimization",
+      "title": "⚡ System Performance Optimization",
+      "tags": ["Performance", "Database Optimization", "Monitoring"],
+      "description": "Led comprehensive performance optimization initiative across microservices architecture, reducing response times and improving user experience for high-traffic applications.",
+      "impact": "70% reduction in average response time, 50% decrease in database query time, and improved system capacity to handle 5x traffic load.",
+      "leadership": "Coordinated between backend, frontend, and DevOps teams. Established performance monitoring culture and mentored engineers on optimization techniques.",
+      "technologies": ["Node.js", "PostgreSQL", "Redis", "New Relic", "DataDog", "Load Balancers"],
+      "timeline": "4 months optimization cycle",
+      "teamSize": "6 engineers"
+    }
+  ]
+}
