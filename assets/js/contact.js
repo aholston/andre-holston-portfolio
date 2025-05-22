@@ -1,6 +1,6 @@
 /**
  * Contact Form Module
- * Handles form submission and validation
+ * Handles form submission with Formspree integration
  */
 const ContactForm = {
     form: null,
@@ -35,7 +35,7 @@ const ContactForm = {
      * Handle form submission
      * @param {Event} e - Form submission event
      */
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
         
         // Get form data
@@ -55,11 +55,28 @@ const ContactForm = {
         // Show loading state
         this.showLoadingState();
         
-        // Simulate form submission (replace with actual implementation)
-        setTimeout(() => {
-            this.showSuccessMessage();
-            this.form.reset();
-        }, 1000);
+        try {
+            // Submit to Formspree
+            const response = await fetch(this.form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                this.showSuccessMessage();
+                this.form.reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            this.showErrorMessage('There was a problem sending your message. Please try again or email me directly.');
+        } finally {
+            this.resetSubmitButton();
+        }
     },
     
     /**
@@ -83,7 +100,7 @@ const ContactForm = {
         }
         
         if (errors.length > 0) {
-            this.showErrorMessages(errors);
+            this.showValidationErrors(errors);
             return false;
         }
         
@@ -112,51 +129,84 @@ const ContactForm = {
     },
     
     /**
-     * Show success message
+     * Reset submit button
      */
-    showSuccessMessage() {
+    resetSubmitButton() {
         const submitButton = this.form.querySelector('button[type="submit"]');
         if (submitButton) {
             submitButton.disabled = false;
             submitButton.textContent = 'Send Message';
         }
+    },
+    
+    /**
+     * Show success message
+     */
+    showSuccessMessage() {
+        this.removeExistingMessages();
         
-        // Create and show success message
         const successDiv = document.createElement('div');
-        successDiv.className = 'success-message';
+        successDiv.className = 'form-message success-message';
         successDiv.style.cssText = `
             background: #10b981;
             color: white;
             padding: 1rem;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin-bottom: 1rem;
             text-align: center;
         `;
         successDiv.textContent = 'Thank you for your message! I\'ll get back to you soon.';
         
-        // Insert after form
-        this.form.parentNode.insertBefore(successDiv, this.form.nextSibling);
+        // Insert at beginning of form
+        this.form.insertBefore(successDiv, this.form.firstChild);
         
-        // Remove message after 5 seconds
+        // Remove message after 10 seconds
         setTimeout(() => {
             if (successDiv.parentNode) {
                 successDiv.parentNode.removeChild(successDiv);
             }
-        }, 5000);
+        }, 10000);
     },
     
     /**
-     * Show error messages
+     * Show error message
+     * @param {string} message - Error message to display
+     */
+    showErrorMessage(message) {
+        this.removeExistingMessages();
+        
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'form-message error-message';
+        errorDiv.style.cssText = `
+            background: #ef4444;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        `;
+        errorDiv.textContent = message;
+        
+        // Insert at beginning of form
+        this.form.insertBefore(errorDiv, this.form.firstChild);
+        
+        // Remove after 10 seconds
+        setTimeout(() => {
+            if (errorDiv.parentNode) {
+                errorDiv.parentNode.removeChild(errorDiv);
+            }
+        }, 10000);
+    },
+    
+    /**
+     * Show validation errors
      * @param {Array} errors - Array of error messages
      */
-    showErrorMessages(errors) {
-        // Remove existing error messages
-        const existingErrors = this.form.querySelectorAll('.error-message');
-        existingErrors.forEach(error => error.remove());
+    showValidationErrors(errors) {
+        this.removeExistingMessages();
         
-        // Create error container
         const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
+        errorDiv.className = 'form-message validation-errors';
         errorDiv.style.cssText = `
             background: #ef4444;
             color: white;
@@ -165,7 +215,6 @@ const ContactForm = {
             margin-bottom: 1rem;
         `;
         
-        // Add error list
         const errorList = document.createElement('ul');
         errorList.style.margin = '0';
         errorList.style.paddingLeft = '1.5rem';
@@ -187,5 +236,13 @@ const ContactForm = {
                 errorDiv.parentNode.removeChild(errorDiv);
             }
         }, 10000);
+    },
+    
+    /**
+     * Remove existing messages
+     */
+    removeExistingMessages() {
+        const existingMessages = this.form.querySelectorAll('.form-message');
+        existingMessages.forEach(message => message.remove());
     }
 };

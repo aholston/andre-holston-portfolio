@@ -209,7 +209,7 @@
                     </div>
                     
                     <div class="contact-form-container">
-                        <form class="contact-form" id="contact-form">
+                        <form class="contact-form" id="contact-form" action="https://formspree.io/f/meogwlyn" method="POST">
                             <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
@@ -230,6 +230,9 @@
                                 <textarea id="message" name="message" placeholder="Tell me about what you're working on, what challenges you're facing, or what you'd like to discuss..." required></textarea>
                             </div>
                             
+                            <!-- Formspree honeypot field to prevent spam -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            
                             <button type="submit" class="cta-button primary full-width">Send Message</button>
                         </form>
                     </div>
@@ -239,7 +242,7 @@
                         <div class="contact-methods">
                             <div class="contact-method">
                                 <strong>Email:</strong> 
-                                <a href="mailto:andre.holston@email.com">andre.holston@email.com</a>
+                                <a href="mailto:andreholston7@gmail.com">andreholston7@gmail</a>
                             </div>
                             <div class="contact-method">
                                 <strong>LinkedIn:</strong> 
