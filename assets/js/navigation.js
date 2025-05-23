@@ -286,47 +286,48 @@ const Navigation = {
      * Open mobile menu
      */
     openMobileMenu() {
-        if (!this.navLinks || !this.mobileMenu) {
-            console.warn('Mobile menu elements not found');
-            return;
-        }
-        
-        this.isMenuOpen = true;
-        this.navLinks.classList.add('mobile-open');
-        this.mobileMenu.classList.add('active');
-        
-        // Force the display with JavaScript
+    if (!this.navLinks || !this.mobileMenu) {
+        console.warn('Mobile menu elements not found');
+        return;
+    }
+
+    this.isMenuOpen = true;
+    this.navLinks.classList.add('mobile-open');
+    this.mobileMenu.classList.add('active');
+
+    if (window.innerWidth <= 768) {
         this.navLinks.style.display = 'flex';
-        
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = 'hidden';
-        
-        // Update hamburger icon
-        this.updateMobileMenuIcon();
-    },
+    } else {
+        this.navLinks.style.display = '';
+    }
+
+    document.body.style.overflow = 'hidden';
+    this.updateMobileMenuIcon();
+},
     
     /**
      * Close mobile menu
      */
     closeMobileMenu() {
-        if (!this.navLinks || !this.mobileMenu) {
-            console.warn('Mobile menu elements not found');
-            return;
-        }
-        
-        this.isMenuOpen = false;
-        this.navLinks.classList.remove('mobile-open');
-        this.mobileMenu.classList.remove('active');
-        
-        // Force the display with JavaScript  
+    if (!this.navLinks || !this.mobileMenu) {
+        console.warn('Mobile menu elements not found');
+        return;
+    }
+
+    this.isMenuOpen = false;
+    this.navLinks.classList.remove('mobile-open');
+    this.mobileMenu.classList.remove('active');
+
+    // Only hide nav links if we're in mobile view
+    if (window.innerWidth <= 768) {
         this.navLinks.style.display = 'none';
-        
-        // Restore body scroll
-        document.body.style.overflow = '';
-        
-        // Update hamburger icon
-        this.updateMobileMenuIcon();
-    },
+    } else {
+        this.navLinks.style.display = ''; // Reset to CSS default
+    }
+
+    document.body.style.overflow = '';
+    this.updateMobileMenuIcon();
+},
     
     /**
      * Update mobile menu icon (hamburger to X)
@@ -397,3 +398,4 @@ const Navigation = {
         this.navigateToSection(sectionId);
     }
 };
+
