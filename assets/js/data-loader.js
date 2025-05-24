@@ -81,7 +81,7 @@ function loadEducation() {
     const education = [
         {
             title: "🎓 Current Education",
-            degree: "Bachelor of Science in Computer Science",
+            degree: "Bachelor of Science in Software Engineering",
             institution: "Western Governors University",
             description: "Currently pursuing - Focus: Software Engineering, Data Structures, Systems Design"
         },
