@@ -152,9 +152,9 @@ function loadTestimonials() {
             role: "Software Engineer"
         },
         {
-            text: "Andre is, above all else, a people-first leader. He builds trust not just through his words, but through his actions—leading by example, advocating for his team, and creating an environment where individuals feel seen, supported, and empowered to grow.",
-            author: "Shaun McClain",
-            role: "Support Engineer"
+            text: "I’ve worked closely with Andre across several major initiatives, and what stands out most is his ability to lead engineering in a way that prioritizes quality, communication, and real partnership. He doesn’t just drive his team forward, he raises the bar across the board. He brings empathy, technical fluency, and a deep respect for the entire product lifecycle. Any organization would benefit from his blend of servant leadership, strategic thinking, and execution excellence.",
+            author: "Darreck Lanier",
+            role: "Quality Assurance Manager"
         },
         {
             text: "He creates the space for engineers to step up, own solutions, and drive impact. Andre brings clarity and focus to the process, asking thoughtful questions and offering guidance without micromanaging. He exemplifies what it means to be a people-first, impact-driven leader.",
