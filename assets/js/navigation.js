@@ -170,7 +170,7 @@ const Navigation = {
      * @return {boolean} Whether the section is valid
      */
     isValidSection(sectionId) {
-        const validSections = ['home', 'philosophy', 'education', 'testimonials', 'blog', 'contact'];
+        const validSections = ['home', 'philosophy', 'education', 'testimonials', 'blog', 'contact', 'performance'];
         return validSections.includes(sectionId);
     },
     
